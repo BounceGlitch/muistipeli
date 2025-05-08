@@ -20,6 +20,8 @@ function shuffle(array) {
 
 const gameBoard = document.getElementById("game-board");
 
+let flippedCards = [];
+
 cards.forEach(image => {
   const card = document.createElement("div");
   card.classList.add("card");
@@ -39,7 +41,33 @@ cards.forEach(image => {
   card.appendChild(cardInner);
   gameBoard.appendChild(card);
 
+  card.dataset.image = image;
+
   card.addEventListener("click", () => {
-    card.classList.toggle("flipped");
+    if (
+      card.classList.contains("flipped") ||
+      flippedCards.length === 2
+    ) {
+      return;
+    }
+
+    card.classList.add("flipped");
+    flippedCards.push(card);
+
+    if (flippedCards.length === 2) {
+      const [first, second] = flippedCards;
+      const firstImage = first.dataset.image;
+      const secondImage = second.dataset.image;
+
+      if (firstImage !== secondImage) {
+        setTimeout(() => {
+          first.classList.remove("flipped");
+          second.classList.remove("flipped");
+          flippedCards = [];
+        }, 1000);
+      } else {
+        flippedCards = [];
+      }
+    }
   });
 });
