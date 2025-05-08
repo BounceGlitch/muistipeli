@@ -40,3 +40,4 @@ cards.forEach(image => {
   gameBoard.appendChild(card);
 });
 
+
