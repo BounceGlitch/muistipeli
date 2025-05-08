@@ -38,6 +38,8 @@ cards.forEach(image => {
   cardInner.appendChild(back);
   card.appendChild(cardInner);
   gameBoard.appendChild(card);
+
+  card.addEventListener("click", () => {
+    card.classList.toggle("flipped");
+  });
 });
-
-
