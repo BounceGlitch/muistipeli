@@ -19,8 +19,10 @@ function shuffle(array) {
 }
 
 const gameBoard = document.getElementById("game-board");
+const winMessage = document.getElementById("win-message");
 
 let flippedCards = [];
+let matchedPairs = 0;
 
 cards.forEach(image => {
   const card = document.createElement("div");
@@ -67,6 +69,11 @@ cards.forEach(image => {
         }, 1000);
       } else {
         flippedCards = [];
+        matchedPairs++;
+
+        if (matchedPairs === images.length) {
+          winMessage.textContent = "🎉 Voitit pelin!";
+        }
       }
     }
   });

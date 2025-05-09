@@ -1,3 +1,19 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #222;
+  color: white;
+  text-align: center;
+}
+
+#game-board {
+  width: 640px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
 .card {
   width: 150px;
   height: 150px;
@@ -38,4 +54,11 @@
   transform: rotateY(180deg);
   background-size: cover;
   background-position: center;
+}
+
+#win-message {
+  font-size: 1.5rem;
+  color: green;
+  margin-top: 1em;
+  font-weight: bold;
 }
