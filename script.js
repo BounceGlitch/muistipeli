@@ -20,10 +20,12 @@ function shuffle(array) {
 
 const gameBoard = document.getElementById("game-board");
 const winMessage = document.getElementById("win-message");
+const scoreDisplay = document.getElementById("score");
 
 let flippedCards = [];
 let matchedPairs = 0;
 let locked = false;
+let score = 0;
 
 cards.forEach(image => {
   const card = document.createElement("div");
@@ -74,6 +76,8 @@ cards.forEach(image => {
       } else {
         flippedCards = [];
         matchedPairs++;
+        score += 10;
+        scoreDisplay.textContent = "Pisteet: " + score;
 
         if (matchedPairs === images.length) {
           winMessage.textContent = "🎉 Voitit pelin!";

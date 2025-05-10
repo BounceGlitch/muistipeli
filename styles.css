@@ -63,6 +63,12 @@ body {
   font-weight: bold;
 }
 
+#score {
+  font-size: 1.3rem;
+  color: #ffcc00;
+  margin-top: 1em;
+}
+
 #restart-btn {
   margin-top: 1em;
   padding: 10px 20px;
