@@ -82,3 +82,7 @@ cards.forEach(image => {
     }
   });
 });
+
+document.getElementById("restart-btn").addEventListener("click", () => {
+  location.reload();
+});
