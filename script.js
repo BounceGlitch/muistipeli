@@ -23,6 +23,7 @@ const winMessage = document.getElementById("win-message");
 
 let flippedCards = [];
 let matchedPairs = 0;
+let locked = false;
 
 cards.forEach(image => {
   const card = document.createElement("div");
@@ -48,7 +49,8 @@ cards.forEach(image => {
   card.addEventListener("click", () => {
     if (
       card.classList.contains("flipped") ||
-      flippedCards.length === 2
+      flippedCards.length === 2 ||
+      locked
     ) {
       return;
     }
@@ -62,10 +64,12 @@ cards.forEach(image => {
       const secondImage = second.dataset.image;
 
       if (firstImage !== secondImage) {
+        locked = true;
         setTimeout(() => {
           first.classList.remove("flipped");
           second.classList.remove("flipped");
           flippedCards = [];
+          locked = false;
         }, 1000);
       } else {
         flippedCards = [];
