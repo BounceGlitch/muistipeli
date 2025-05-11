@@ -21,11 +21,19 @@ function shuffle(array) {
 const gameBoard = document.getElementById("game-board");
 const winMessage = document.getElementById("win-message");
 const scoreDisplay = document.getElementById("score");
+const timerDisplay = document.getElementById("timer");
 
 let flippedCards = [];
 let matchedPairs = 0;
 let locked = false;
 let score = 0;
+let time = 0;
+let timerInterval = null;
+
+timerInterval = setInterval(() => {
+  time++;
+  timerDisplay.textContent = "Aika: " + time + " s";
+}, 1000);
 
 cards.forEach(image => {
   const card = document.createElement("div");
@@ -81,6 +89,7 @@ cards.forEach(image => {
 
         if (matchedPairs === images.length) {
           winMessage.textContent = "🎉 Voitit pelin!";
+          clearInterval(timerInterval);
         }
       }
     }
