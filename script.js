@@ -60,7 +60,8 @@ cards.forEach(image => {
     if (
       card.classList.contains("flipped") ||
       flippedCards.length === 2 ||
-      locked
+      locked ||
+      flippedCards.includes(card)
     ) {
       return;
     }
