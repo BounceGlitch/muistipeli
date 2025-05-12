@@ -56,13 +56,6 @@ body {
   background-position: center;
 }
 
-#win-message {
-  font-size: 1.5rem;
-  color: green;
-  margin-top: 1em;
-  font-weight: bold;
-}
-
 #score {
   font-size: 1.3rem;
   color: #ffcc00;
@@ -89,4 +82,17 @@ body {
 
 #restart-btn:hover {
   background-color: #ff9900;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+#win-message {
+  font-size: 1.5rem;
+  color: #00ff88;
+  margin-top: 1em;
+  font-weight: bold;
+  animation: bounce 1s ease-in-out infinite;
 }
