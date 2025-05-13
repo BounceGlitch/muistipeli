@@ -1,14 +1,16 @@
 console.log("Muistipeli käynnistyy...");
 
+const menu = document.getElementById("menu");
+const gameContainer = document.getElementById("game-container");
+
+document.getElementById("start-btn").addEventListener("click", () => {
+  menu.style.display = "none";
+  gameContainer.style.display = "block";
+});
+
 const images = [
-  "apple.jpg",
-  "avocado.jpg",
-  "banana.jpg",
-  "carrot.jpg",
-  "eggplant.jpg",
-  "grape.jpg",
-  "orange.jpg",
-  "pear.jpg"
+  "apple.jpg", "avocado.jpg", "banana.jpg", "carrot.jpg",
+  "eggplant.jpg", "grape.jpg", "orange.jpg", "pear.jpg"
 ];
 
 let cards = [...images, ...images];

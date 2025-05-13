@@ -6,6 +6,26 @@ body {
   text-align: center;
 }
 
+#menu {
+  text-align: center;
+  margin-top: 100px;
+}
+
+#start-btn {
+  font-size: 1.2rem;
+  padding: 10px 25px;
+  background-color: #00ff88;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+}
+
+#start-btn:hover {
+  background-color: #00cc66;
+}
+
 #game-board {
   width: 720px;
   margin: 20px auto;
