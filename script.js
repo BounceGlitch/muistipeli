@@ -91,7 +91,7 @@ cards.forEach(image => {
         scoreDisplay.textContent = "Pisteet: " + score;
 
         if (matchedPairs === images.length) {
-          winMessage.textContent = "🎉 Voitit pelin!";
+          winMessage.textContent = "Voitit pelin!";
           clearInterval(timerInterval);
         }
       }
